@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* F-1: Brand Identity Colors */
+  --color-primary: #2563eb; /* Blue 600 */
+  --color-primary-hover: #1d4ed8;
+  --color-surface: var(--background);
+  
+  /* Font sync with Next.js Geist fonts */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a; /* Slate 900 for better readability */
+  --card: #ffffff;
+  --border: #e2e8f0;
+}
+
+/* F-4: Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #020617; /* Deep Navy/Black */
+    --foreground: #f8fafc;
+    --card: #1e293b;
+    --border: #334155;
+  }
+}
+
+/* Base Styles */
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Smooth transitions when switching themes or hovering */
+  * {
+    @apply transition-colors duration-200;
+    border-color: var(--border);
+  }
+}
+
+/* Custom Scrollbar for the "Modern" feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-700 rounded-full hover:bg-gray-400;
+}
