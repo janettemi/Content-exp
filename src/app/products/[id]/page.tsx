@@ -1,11 +1,11 @@
 export const runtime = 'edge'; // Use Edge Runtime for faster response times
 
-import { ArrowLeftIcon } from "@/src/components/Icon";
-import { getProductById } from "@/src/lib/api";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+import { getProductById } from "@/lib/api";
+import { ArrowLeftIcon } from "@/components/Icon";
 
 interface Props {
   params: Promise<{ id: string }>; // In Next.js 15, params is a Promise
