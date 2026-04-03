@@ -1,4 +1,6 @@
-const nextConfig = {
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
@@ -6,6 +8,12 @@ const nextConfig = {
         hostname: "cdn.dummyjson.com",
       },
     ],
+    
+    unoptimized: true, 
+  },
+  // This helps Cloudflare handle the build output correctly
+  typescript: {
+    ignoreBuildErrors: false,
   },
 };
 
