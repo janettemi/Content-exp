@@ -1,3 +1,4 @@
+export const runtime = 'edge'; // Use Edge Runtime for faster response times
 
 import { ArrowLeftIcon } from "@/src/components/Icon";
 import { getProductById } from "@/src/lib/api";
